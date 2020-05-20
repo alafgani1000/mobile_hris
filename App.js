@@ -38,7 +38,8 @@ export default class CardItemBordered extends Component {
 const styles = StyleSheet.create({
   centerContent : {
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    flex: 1
   },
   loginButton : {
     marginTop: 10
