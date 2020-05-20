@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { StyleSheet } from 'react-native';
-import { Container, Header, Content, Card, CardItem, Text, Body } from "native-base";
+import { Container, Header, Content, Card, CardItem, Text, Body, Item, Input, Button } from "native-base";
 import axios from 'axios';
 
 export default class CardItemBordered extends Component {
   render() {
       return (           
-          <Container style = {styles.centerContent} >
+          <Container style={styles.centerContent} >
             <Content padder>
               <Card>
                 <CardItem header bordered>
@@ -14,13 +14,15 @@ export default class CardItemBordered extends Component {
                 </CardItem>
                 <CardItem bordered>
                   <Body>
-                    <Text>
-                      NativeBase is a free and open source framework that enable
-                      developers to build
-                      high-quality mobile apps using React Native iOS and Android
-                      apps
-                      with a fusion of ES6.
-                    </Text>
+                      <Item>
+                        <Input placeholder="Username" />
+                      </Item>
+                      <Item>
+                        <Input placeholder="Password" />
+                      </Item>
+                      <Button full info style={styles.loginButton}>
+                          <Text>Login</Text>
+                      </Button>
                   </Body>
                 </CardItem>
                 <CardItem footer bordered>
@@ -36,7 +38,9 @@ export default class CardItemBordered extends Component {
 const styles = StyleSheet.create({
   centerContent : {
     justifyContent: 'center',
-    alignItems: 'center',
-    flex: 1
+    alignItems: 'center'
+  },
+  loginButton : {
+    marginTop: 10
   }
 });
