@@ -3,14 +3,13 @@ import { StyleSheet } from 'react-native';
 import { Container, Header, Content, Card, CardItem, Text, Body, Item, Input, Button } from "native-base";
 import axios from 'axios';
 
-export default class Login extends Component {
-  render() {
+export function LoginScreen({navigation}){
       return (           
           <Container style={styles.centerContent} >
             <Content padder>
               <Card>
                 <CardItem header bordered>
-                  <Text>NativeBase</Text>
+                  <Text>Logo</Text>
                 </CardItem>
                 <CardItem bordered>
                   <Body>
@@ -20,7 +19,9 @@ export default class Login extends Component {
                       <Item>
                         <Input placeholder="Password" />
                       </Item>
-                      <Button full info style={styles.loginButton}>
+                      <Button full info style={styles.loginButton}
+                        onPress={() => navigation.navigate('Home')}
+                      >
                           <Text>Login</Text>
                       </Button>
                   </Body>
@@ -33,7 +34,6 @@ export default class Login extends Component {
           </Container>  
     );
   }
-}
 
 const styles = StyleSheet.create({
   centerContent : {
