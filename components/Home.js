@@ -1,47 +1,145 @@
 import React, { Component } from "react";
 import { StyleSheet,View, Image } from 'react-native';
 import { Container, Header, Content, Card, CardItem, Text, Body, Item, Input, Button } from "native-base";
+import { Col, Row, Grid } from 'react-native-easy-grid';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { useFonts } from '@use-expo/font';
+import { AppLoading } from 'expo';
 
 export function Home({ navigation }) {
+    let [fontsLoaded] = useFonts({
+        'roboto': require('../assets/fonts/Roboto-Regular.ttf'),
+    });
+
+    
     return (          
         <Container style={styles.centerContent}>
-            <Image style={styles.profilImage} source={require('../assets/splash.png')} />
-            <Body style={styles.profileDesc}>
-                <Text style={styles.profileTitle}>
-                    1545-88888-666
-                </Text>
-                <Text style={styles.profileTitle}>
-                    Gea Munandar
-                </Text>
-            </Body>
+            <Grid>
+                <Row size={20} style={styles.rowProfileImage}>
+                    <Image style={styles.profilImage} source={require('../assets/img/profile.jfif')} />
+                </Row>
+                <Row size={12} style={styles.rowProfileText}>
+                    <Col style={styles.profileDesc1}>
+                        <Text style={styles.profileTitle}>
+                            88888 | O
+                        </Text>
+                        <Text style={styles.profileTitle}>
+                            Gea Munandar
+                        </Text>
+                        <Text style={styles.profileTitle}>
+                            Information Technology
+                        </Text>
+                    </Col>
+                </Row>
+                <Row size={68} style={styles.rowProfileMenu}>                    
+                    <View style={styles.colMenu}>
+                        
+                    </View>
+                </Row>
+            </Grid>
         </Container>  
     );
 }
 
 const styles = StyleSheet.create({
     centerContent : {
-        alignItems: 'center',
         flex: 1,
-        backgroundColor:'#f5f5f5'
+        backgroundColor:'#80c4a5',
+        fontFamily:'roboto'
     },
     loginButton : {
         marginTop: 10
     },
     profilImage : {
-        marginTop:30,
         height: 120,
         width: 120,
-        borderWidth: 3,
+        borderWidth: 1,
         borderRadius: 40,
+        borderColor: '#f0eded',
+        alignItems: 'center',
+        marginTop: 10,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
     },
-    profileDesc : {
-        marginTop:10,
+    profileDesc1 : {
+        marginBottom: 10,
+        marginTop: 5,
+        marginLeft: 10,
+        marginRight: 10,
+        backgroundColor: '#70b596',
+        padding: 10, 
+        borderRadius: 10,
+        textAlign: 'center',
+
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5, 
+    },
+    profileDesc2 : {
+        marginBottom: 10,
+        marginTop: 10,
+        marginLeft: 1,
+        marginRight: 10,
+        backgroundColor: '#fff',        
+        padding: 10, 
+        borderTopRightRadius: 10,
+        borderBottomRightRadius: 10,
     },
     profileTitle : {
         fontWeight: 'bold',
-
+        fontSize: 10,
+        color: '#fff',
+        textShadowColor: '#000',
+        textShadowRadius: 3,
+        textShadowOffset: 3,
+    },
+    rowProfileImage : {
+        backgroundColor: '#80c4a5',
+        justifyContent: 'center',
+       
+    },
+    rowProfileText : {
+        backgroundColor: '#80c4a5',
+        justifyContent: 'center',       
+        paddingTop: 0,   
+        marginTop: 20,
+    },
+    rowProfileMenu : {
+        marginTop: 10,
+        backgroundColor: '#fff',
+        borderTopRightRadius: 30,
+        borderTopLeftRadius: 30,   
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5, 
+    },
+    colMenu : {
+        backgroundColor: '#5cbf94',
+        height: 80,
+        margin: 5,
+        borderRadius: 20,
+        alignItems: 'stretch',
+        flex: 1
+    },
+    gradient: {
+        flex: 1,
     }
 });
 
