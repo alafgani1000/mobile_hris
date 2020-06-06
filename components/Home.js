@@ -36,6 +36,9 @@ export function Home({ navigation }) {
                     <View style={styles.colMenu}>
                         
                     </View>
+                    <View style={styles.colMenu}>
+                        
+                    </View>
                 </Row>
             </Grid>
         </Container>  
