@@ -32,12 +32,20 @@ export function Home({ navigation }) {
                         </Text>
                     </Col>
                 </Row>
-                <Row size={68} style={styles.rowProfileMenu}>                    
-                    <View style={styles.colMenu}>
-                        
-                    </View>
-                    <View style={styles.colMenu}>
-                        
+                <Row size={68} style={styles.rowProfileMenu}>     
+                    <View style={styles.menuRow}>     
+                        <View style={styles.colMenu}>
+                            <Image style={styles.menuImage} source={require('../assets/img/ja.png')} />
+                        </View>
+                        <View style={styles.colMenu}>
+                            
+                        </View>
+                        <View style={styles.colMenu}>
+                            
+                        </View>
+                        <View style={styles.colMenu}>
+                            
+                        </View>
                     </View>
                 </Row>
             </Grid>
@@ -48,7 +56,7 @@ export function Home({ navigation }) {
 const styles = StyleSheet.create({
     centerContent : {
         flex: 1,
-        backgroundColor:'#80c4a5',
+        backgroundColor:'#004445',
         fontFamily:'roboto'
     },
     loginButton : {
@@ -61,7 +69,7 @@ const styles = StyleSheet.create({
         borderRadius: 40,
         borderColor: '#f0eded',
         alignItems: 'center',
-        marginTop: 10,
+        marginTop: 30,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -76,7 +84,7 @@ const styles = StyleSheet.create({
         marginTop: 5,
         marginLeft: 10,
         marginRight: 10,
-        backgroundColor: '#70b596',
+        backgroundColor: '#021C1E',
         padding: 10, 
         borderRadius: 10,
         textAlign: 'center',
@@ -109,19 +117,19 @@ const styles = StyleSheet.create({
         textShadowOffset: 3,
     },
     rowProfileImage : {
-        backgroundColor: '#80c4a5',
+        backgroundColor: '#004445',
         justifyContent: 'center',
        
     },
     rowProfileText : {
-        backgroundColor: '#80c4a5',
+        backgroundColor: '#004445',
         justifyContent: 'center',       
         paddingTop: 0,   
         marginTop: 20,
     },
     rowProfileMenu : {
         marginTop: 10,
-        backgroundColor: '#fff',
+        backgroundColor: '#e9f7ed',
         borderTopRightRadius: 30,
         borderTopLeftRadius: 30,   
         shadowColor: "#000",
@@ -133,13 +141,28 @@ const styles = StyleSheet.create({
         shadowRadius: 3.84,
         elevation: 5, 
     },
+    menuRow : {
+        marginTop: 20,
+        alignItems: 'stretch',
+        flex: 1,
+        flexDirection: 'column'
+    },
     colMenu : {
-        backgroundColor: '#5cbf94',
+        backgroundColor: '#FFF',
         height: 80,
-        margin: 5,
+        marginTop: 5,
+        marginBottom: 5,
+        marginRight: 20,
+        marginLeft: 20,
         borderRadius: 20,
         alignItems: 'stretch',
-        flex: 1
+        justifyContent: 'center'
+    },
+    menuImage : { 
+        borderColor: '#f0eded',
+        width: 60,
+        height: 60,
+        marginLeft: 15
     },
     gradient: {
         flex: 1,
